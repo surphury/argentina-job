@@ -1,0 +1,12 @@
+[package]
+name = "argentina-job"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+actix-web = "4.12.1"
+sqlx = { version = "0.8.6", features = [
+	"runtime-async-std",
+	"tls-native-tls",
+	"postgres",
+] }
