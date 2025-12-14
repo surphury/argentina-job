@@ -1,0 +1,99 @@
+# IESTP Argentina – Job Board Platform
+
+Sistema web de bolsa de trabajo diseñado para **centralizar, validar y optimizar** la interacción entre estudiantes, egresados y empresas, con el objetivo de **facilitar procesos de inserción laboral técnica** de manera controlada y escalable.
+
+## Purpose
+
+Este sistema existe para:
+
+- Centralizar la oferta y demanda laboral técnica en un entorno institucional
+- Reducir la fricción entre postulantes y empresas
+- Proveer un mecanismo digital confiable de empleabilidad
+- Servir como base tecnológica para análisis de inserción laboral
+- Estandarizar el proceso de publicación y postulación de empleos
+
+## Scope
+
+- Registro de usuarios mediante autenticación federada
+- Gestión de perfiles profesionales
+- Publicación y administración de ofertas laborales
+- Postulación controlada a vacantes
+- Persistencia estructurada de datos laborales
+- Arquitectura preparada para métricas, auditoría y escalabilidad
+
+## Authentication
+
+- OAuth 2.0 con Google
+- Acceso permitido con:
+  - Cuentas Gmail
+  - Cuentas corporativas externas
+- No se requiere correo institucional activo
+- Identidad validada únicamente por proveedor externo
+
+## Architecture Overview
+
+- **Backend:** Rust (API REST)
+- **Database:** SQL (relacional)
+- **Auth Provider:** Google OAuth 2.0
+- **Deployment:** Cloud-based hosting
+- **Future-ready:** Admin panel, analytics, reporting
+
+## Core Entities
+
+### User
+- id
+- email
+- role (student | graduate | company)
+- created_at
+
+### Student / Graduate Profile
+- full_name
+- program
+- graduation_year
+- skills
+- experience
+- resume_url
+
+### Company
+- company_name
+- email
+- industry
+- description
+- verified
+
+### JobOffer
+- title
+- description
+- requirements
+- modality
+- location
+- status
+- published_at
+
+### Application
+- user_id
+- job_offer_id
+- applied_at
+- status
+
+## Non-Functional Requirements
+
+- Secure authentication
+- Data integrity and consistency
+- Scalable architecture
+- Maintainable codebase
+- Separation of concerns
+- Audit-ready structure
+
+## Project Status
+
+- Core system: In development
+- Admin panel: Pending
+- Production deployment: Planned
+
+## License
+
+Licensed under the **Apache License, Version 2.0**  
+You may not use this software except in compliance with the License.
+
+See the LICENSE file for details.
